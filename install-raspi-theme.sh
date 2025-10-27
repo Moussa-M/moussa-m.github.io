@@ -36,8 +36,14 @@ PROMPT=$'# %F{198}%n%f@%F{39}$(box_name)%f %F{48}[$(local_ip)]%f %F{39}%~%f %F{2
 
 # Prefix all command output with "# "
 preexec() {
-  exec 3>&1 4>&2
-  exec > >(sed 's/^/# /') 2>&1
+  if [ -z "$SSH_TTY" ]; then
+    # Local interactive session — enable commented output
+    exec 3>&1 4>&2
+    exec > >(sed 's/^/# /') 2>&1
+  else
+    # SSH session — keep normal stdout/stderr
+    :
+  fi
 }
 
 precmd() {
