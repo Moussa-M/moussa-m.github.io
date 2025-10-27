@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moussa Mokhtari - Dev Tools & Scripts</title>
+    <meta name="description" content="Collection of development tools, scripts, and utilities by Moussa Mokhtari">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(to bottom, #fafafa 0%, #e4e4e7 100%);
+            color: #18181b;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            flex: 1;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #14b8a6 0%, #0d9488 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            font-size: 1.125rem;
+            color: #71717a;
+            margin-bottom: 1.5rem;
+        }
+
+        .links {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .link-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background: white;
+            color: #18181b;
+            text-decoration: none;
+            border-radius: 0.75rem;
+            font-weight: 500;
+            transition: all 0.2s;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .link-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(20, 184, 166, 0.2);
+        }
+
+        .link-btn.primary {
+            background: linear-gradient(135deg, #14b8a6 0%, #0d9488 100%);
+            color: white;
+        }
+
+        .tools-section {
+            margin-top: 3rem;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: #18181b;
+        }
+
+        .tool-card {
+            background: white;
+            border-radius: 1rem;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            transition: all 0.2s;
+        }
+
+        .tool-card:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .tool-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #14b8a6;
+        }
+
+        .tool-description {
+            color: #52525b;
+            margin-bottom: 1rem;
+        }
+
+        .code-block {
+            background: #18181b;
+            color: #14b8a6;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            font-family: 'Monaco', 'Courier New', monospace;
+            font-size: 0.875rem;
+            overflow-x: auto;
+            position: relative;
+        }
+
+        .code-block code {
+            display: block;
+        }
+
+        .copy-btn {
+            position: absolute;
+            top: 0.5rem;
+            right: 0.5rem;
+            background: #27272a;
+            color: #14b8a6;
+            border: none;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.375rem;
+            cursor: pointer;
+            font-size: 0.75rem;
+            transition: all 0.2s;
+        }
+
+        .copy-btn:hover {
+            background: #3f3f46;
+        }
+
+        .copy-btn.copied {
+            background: #14b8a6;
+            color: white;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #71717a;
+            font-size: 0.875rem;
+            background: linear-gradient(to top, rgba(0,0,0,0.03) 0%, transparent 100%);
+        }
+
+        footer a {
+            color: #14b8a6;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 640px) {
+            h1 {
+                font-size: 2rem;
+            }
+            .container {
+                padding: 2rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Dev Tools & Scripts</h1>
+            <p class="subtitle">Collection of utilities and development tools</p>
+            <div class="links">
+                <a href="https://moussamokhtari.com" class="link-btn primary">
+                    <span>🌐</span>
+                    <span>Main Site</span>
+                </a>
+                <a href="https://github.com/Moussa-M" class="link-btn">
+                    <span>💻</span>
+                    <span>GitHub</span>
+                </a>
+                <a href="https://linkedin.com/in/moussamokhtari" class="link-btn">
+                    <span>💼</span>
+                    <span>LinkedIn</span>
+                </a>
+            </div>
+        </header>
+
+        <section class="tools-section">
+            <h2 class="section-title">⚡ Quick Install Scripts</h2>
+
+            <div class="tool-card">
+                <h3 class="tool-title">Raspi Zsh Theme</h3>
+                <p class="tool-description">
+                    A clean, copy-paste friendly Zsh theme with commented output. Perfect for documenting terminal sessions
+                    and sharing commands that won't break when pasted into scripts.
+                </p>
+                <div class="code-block">
+                    <button class="copy-btn" onclick="copyCode(this, 'raspi-install')">Copy</button>
+                    <code id="raspi-install">curl -fsSL https://moussa-m.github.io/install-raspi-theme.sh | bash</code>
+                </div>
+            </div>
+
+            <div class="tool-card">
+                <h3 class="tool-title">Features</h3>
+                <p class="tool-description">
+                    ✨ Colored prompt with user@host, IP address, and path<br>
+                    📦 Conda and virtualenv environment display<br>
+                    💬 All output prefixed with # for safe copy-paste<br>
+                    🎨 Raspberry pink cursor with custom styling<br>
+                    🔧 One-line installation
+                </p>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>Made by <a href="https://moussamokhtari.com">Moussa Mokhtari</a></p>
+        <p>Tech Lead & Entrepreneur | Building tools that compound value</p>
+    </footer>
+
+    <script>
+        function copyCode(button, codeId) {
+            const code = document.getElementById(codeId).textContent;
+            navigator.clipboard.writeText(code).then(() => {
+                button.textContent = 'Copied!';
+                button.classList.add('copied');
+                setTimeout(() => {
+                    button.textContent = 'Copy';
+                    button.classList.remove('copied');
+                }, 2000);
+            });
+        }
+    </script>
+</body>
+</html>
