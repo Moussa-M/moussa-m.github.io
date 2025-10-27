@@ -34,15 +34,16 @@ fi
 echo -ne '\e[1 q\e]12;#ff0087\a'
 PROMPT=$'# %F{198}%n%f@%F{39}$(box_name)%f %F{48}[$(local_ip)]%f %F{39}%~%f %F{244}$(conda_info)%f %F{244}$(virtualenv_info)%f\n'
 
-# Prefix all command output with "# "
+# Prefix all command output with "# " (only in local sessions, not SSH)
 preexec() {
-  if [ -z "$SSH_TTY" ]; then
+  # Check if this is an SSH session using multiple methods
+  if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ] || [ -n "$SSH_CONNECTION" ]; then
+    # SSH session — keep normal stdout/stderr
+    :
+  else
     # Local interactive session — enable commented output
     exec 3>&1 4>&2
     exec > >(sed 's/^/# /') 2>&1
-  else
-    # SSH session — keep normal stdout/stderr
-    :
   fi
 }
 
