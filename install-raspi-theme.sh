@@ -5,7 +5,7 @@
 
 set -e
 
-THEME_DIR="$HOME/.oh-my-zsh/custom/themes"
+THEME_DIR="$HOME/.oh-my-zsh/themes"
 THEME_FILE="$THEME_DIR/raspi.zsh-theme"
 
 echo "📦 Installing Raspi Zsh Theme..."
