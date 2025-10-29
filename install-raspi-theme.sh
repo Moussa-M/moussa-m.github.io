@@ -8,10 +8,7 @@
 #
 #   Custom format:
 #     curl -fsSL https://moussa-m.github.io/install-raspi-theme.sh | bash -s -- -f "u@h d"
-<<<<<<< HEAD
 #     curl -fsSL https://moussa-m.github.io/install-raspi-theme.sh | bash -s -- -ex i
-=======
->>>>>>> 045d224205f6dd73fd49d3eb684145f7a39e4889
 #     ./install-raspi-theme.sh -f "u@h [i:p] d" -ex cv
 #
 # Prompt format:  u@h [i:p] d (c) (v)
